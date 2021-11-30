@@ -4,13 +4,17 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+
 .content {
   color: white;
   margin: auto;
   height: 100vh;
-  width: 75vw;
+  width: 80vw;
+  padding: 1.5%;
 }
-.block{
+
+.block {
   background-color: #343a40;
   border-radius: 10px;
+  padding: 1%;
 }

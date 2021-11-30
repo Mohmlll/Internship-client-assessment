@@ -1,0 +1,15 @@
+.item-card {
+  background-color: dimgray;
+  padding: 1%;
+}
+
+.item-card img {
+  width: 100%;
+
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
