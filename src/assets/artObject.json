@@ -1,0 +1,33 @@
+{
+"ArtObject":{
+  "hasImage": true,
+  "headerImage": {
+    "guid": "16a2d053-448a-435a-8148-a1e758438d5b",
+    "height": 586,
+    "offsetPercentageX": 0,
+    "offsetPercentageY": 0,
+    "url": "https://lh5.ggpht.com/VI07cMuwb81W4q4UkIMaQaPoV9vJnZDR105Ib4lbchJsKHon4pgdRZMqHuqY4k4Q2NyhnYyIQxZQrPab-VY7JbrgmqaF=s0",
+    "width": 2447
+  },
+  "id": "nl-BK-AM-33",
+  "links": {
+    "self": "http://www.rijksmuseum.nl/api/nl/collection/BK-AM-33",
+    "web": "http://www.rijksmuseum.nl/nl/collectie/BK-AM-33"
+  },
+  "longTitle": "Pleurants van het praalgraf van Isabella van Bourbon, Borman werkplaats (toegeschreven aan), Renier van Thienen (I) (toegeschreven aan), ca. 1475 - ca. 1476",
+  "objectNumber": "BK-AM-33",
+  "permitDownload": true,
+  "principalOrFirstMaker": "Borman werkplaats, Renier van Thienen (I)",
+  "productionPlaces": ["? Brussel (stad)", "Brussel (stad)"],
+  "showImage": true,
+  "title": "Pleurants van het praalgraf van Isabella van Bourbon",
+  "webImage": {
+    "guid": "5b29ba1c-4c23-49c6-8bb6-2253ddbb560b",
+    "height": 1328,
+    "offsetPercentageX": 0,
+    "offsetPercentageY": 0,
+    "url": "https://lh5.ggpht.com/LE3ggDaLAIwTIOknJm06U2Y_qNffQ0133bWQxnWfDtzi12uWE85MYWtYwvo8eQZx1tc-U-vH_-2ZIoDGYUUrs8YklQ=s0",
+    "width": 2500
+  }
+}
+}

@@ -1,3 +1,69 @@
 <div class="container-lg content">
 
+  <div class="row">
+    <div class="block col-lg-2 row">
+      <form (submit)="getData()">
+        <div class="col-md-12 form-group">
+          <label for="search">Search</label>
+          <input [(ngModel)]="search" type="search" name="filter" class="form-control" placeholder="Search" aria-label="Search"
+                 id="search"/>
+        </div>
+        <div class="col-md-12">
+          <h5>Maker</h5>
+          <div class="form-group">
+            <label for="maker-name">Name</label>
+            <input [(ngModel)]="name" type="text" name="filter" class="form-control" id="maker-name">
+
+          </div>
+          <div class="form-group">
+            <label for="maker-role">Role</label>
+            <input [(ngModel)]="role" type="text" name="filter" class="form-control" id="maker-role">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <h5>Object</h5>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input [(ngModel)]="title" type="text" name="filter" class="form-control" id="title">
+
+          </div>
+          <div class="form-group">
+            <label for="technique">Technique</label>
+            <input [(ngModel)]="technique" type="text" name="filter" class="form-control" id="technique">
+
+          </div>
+          <div class="form-group">
+            <label for="objectnumber">Objectnumber</label>
+            <input [(ngModel)]="objectnumber" type="text" name="filter" class="form-control" id="objectnumber">
+          </div>
+          <div class="form-group">
+            <label for="material">Material</label>
+            <input [(ngModel)]="material" type="text" name="filter" class="form-control" id="material">
+          </div>
+          <div class="form-group">
+            <label for="star-year">Start year</label>
+            <input [(ngModel)]="startYear" type="number" name="filter" class="form-control" id="star-year">
+          </div>
+          <div class="form-group">
+            <label for="end-year">End year</label>
+            <input [(ngModel)]="endYear" type="number" name="filter" class="form-control" id="end-year">
+          </div>
+        </div>
+        <div class="block col-lg-10">
+          <button type="submit" value="Submit" class="btn btn-primary">Search</button>
+        </div>
+      </form>
+    </div>
+    <div class="block col-lg-8">
+      <img src="assets/img/Rijks_museum_logo.png">
+      <br>
+      Lorem ipsum dolor sit amet,
+      consectetur adipisicing elit.
+      Deleniti odit, suscipit. Accusamus alias et molestias nemo
+      quibusdam vero! Animi consectetur cumque dolore,
+      et facere in numquam officia porro ullam voluptas!
+    </div>
+
+  </div>
+
 </div>

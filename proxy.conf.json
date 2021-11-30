@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "https://random-data-api.com/",
+    "target": "http://www.rijksmuseum.nl/",
     "secure": true,
     "changeOrigin": true,
     "logLevel": "debug",
