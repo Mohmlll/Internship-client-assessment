@@ -1,0 +1,17 @@
+<table *ngIf="artObject !== null" class="container">
+  <tr>
+    <th colspan="2">Selected artObject details (Objectnumber: {{artObject.objectNumber}})</th>
+  </tr>
+  <tr>
+    <td>Image</td>
+    <td><img style="width: 20rem" src="{{artObject.headerImage.url}}" alt="img"></td>
+  </tr>
+  <tr>
+    <td>Title:</td>
+    <td><h5>{{artObject.title}}</h5></td>
+  </tr>
+  <tr>
+    <td>long title:</td>
+    <td><span>{{artObject.longTitle}}</span></td>
+  </tr>
+</table>

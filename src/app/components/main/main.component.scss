@@ -1,6 +1,15 @@
 .item-card {
   background-color: dimgray;
   padding: 1%;
+  cursor: pointer;
+}
+
+.item-card:hover{
+  background-color: darkgray;
+}
+
+.detail{
+  background-color: dimgray;
 }
 
 .item-card img {

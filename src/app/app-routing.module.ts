@@ -5,10 +5,10 @@ import {LandingPageComponent} from "./components/landing-page/landing-page.compo
 import {DetailComponent} from "./components/detail/detail.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/landing', pathMatch: 'full'},
   {
     path: 'main', component: MainComponent, children: [
-      {path: ':id', component: DetailComponent},
+      {path: ':objectnumber', component: DetailComponent},
     ]
   },
   {path: 'landing', component: LandingPageComponent},

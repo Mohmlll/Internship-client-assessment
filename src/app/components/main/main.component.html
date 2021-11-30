@@ -1,37 +1,38 @@
 <div class="container-lg content">
 
   <div class="row">
-    <div class="block col-sm-2">
-      <form (submit)="filterObjects()">
-        <div class="col-md-12">
-          <div class="form-group">
-          <label for="search">Search</label>
-          <input [(ngModel)]="search" aria-label="Search" class="form-control" id="search" name="filter"
-                 placeholder="Search"
-                 type="search"/>
+    <div class="block col-lg-10 m-auto row">
+      <form (submit)="getObjects()">
+        <div class="row p-3">
+          <div class="col-lg-3">
+            <label for="search">Search</label>
+            <input [(ngModel)]="search" aria-label="Search" class="form-control" id="search" name="filter"
+                   placeholder="Search"
+                   type="search"/>
           </div>
-          <div class="form-group">
+          <div class="col-lg-3">
             <label for="name">Artist:</label>
             <input [(ngModel)]="name" class="form-control" id="name" name="filter" type="text">
           </div>
-          <div class="form-group">
+          <div class="form-group col-lg-3">
             <label for="technique">Technique</label>
             <input [(ngModel)]="technique" class="form-control" id="technique" name="filter" type="text">
           </div>
-          <div class="form-group">
+          <div class="form-group col-lg-3">
             <label for="objectnumber">Objectnumber</label>
             <input [(ngModel)]="objectnumber" class="form-control" id="objectnumber" name="filter" type="text">
           </div>
-          <div class="form-group">
+          <div class="form-group col-lg-3">
             <label for="material">Material</label>
             <input [(ngModel)]="material" class="form-control" id="material" name="filter" type="text">
           </div>
-          <button class="btn btn-primary" type="submit" value="Submit">Search</button>
         </div>
-
+        <button class="btn btn-primary" type="submit" value="Submit">Search</button>
       </form>
+
     </div>
-    <div class="block col-lg-9  m-auto" style="overflow: auto">
+
+    <div class="block col-lg-10 m-auto row" style="overflow: auto">
       <img src="assets/img/Rijks_museum_logo.png">
       <br>
       Lorem ipsum dolor sit amet,
@@ -40,17 +41,23 @@
       quibusdam vero! Animi consectetur cumque dolore,
       et facere in numquam officia porro ullam voluptas!
 
-
-      <div *ngFor="let obj of artObjects" class="cards">
-        <div class="col-sm-5">
-          <div class="card item-card">
-            <img class="card-img-top" src="{{obj.headerImage.url}}" style="width: 18rem;">
-            <div class="card-body">
-              <h4 class="card-title">{{obj.title}}</h4>
-              <button (click)="onSelect(obj.objectNumber)" class="btn btn-primary">Details</button>
+      <div class=" col-sm-3">
+        <div *ngFor="let obj of artObjects" class="cards">
+          <div class="w-100 p-1">
+            <div (click)="onSelect(obj.objectNumber, obj)" class="card item-card">
+              <h6 class="card-title">{{obj.title}}</h6>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="detail block col-sm-8">
+        <h4 *ngIf="isNotNull();
+          else app_detail"
+            class="no-offer-details col-8">Select an art object on your left</h4>
+        <ng-template #app_detail>
+          <router-outlet></router-outlet>
+        </ng-template>
       </div>
     </div>
 

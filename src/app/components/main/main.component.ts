@@ -17,38 +17,27 @@ export class MainComponent implements OnInit {
 
   selectedObjectId: string = `-1`;
 
-  artObjects: any[] | undefined;
+  artObjects: any[] = [];
 
   constructor(private service: MuseumServive, private activatedRoute: ActivatedRoute, private router: Router) {
   }
 
   ngOnInit(): void {
-    this.filterObjects();
+    this.artObjects = this.service.results;
   }
 
-  onSelect(oId: string) {
+  onSelect(oId: string, obj: any) {
     this.selectedObjectId = oId;
     console.log(oId);
     this.router.navigate([oId], {relativeTo: this.activatedRoute});
   }
 
-  filterObjects() {
-    const filters: {} = omitBy(
-      // Object won't have any undefined keys
-      {
-        q: this.search,
-        involvedMaker: this.name,
-        material: this.material,
-        technique: this.technique,
-        objectnumber: this.objectnumber,
-      },
-      isUndefined
-    );
-    this.service.query(filters).subscribe((data) => {
-      this.artObjects = data.artObjects;
-      console.log(this.artObjects)
-    });
+  isNotNull(): boolean {
+    return this.selectedObjectId == null;
   }
 
-
+  async getObjects(){
+    await this.service.getFilterdObj(this.objectnumber, this.technique, this.name, this.search, this.material);
+    this.artObjects = this.service.results;
+  }
 }
