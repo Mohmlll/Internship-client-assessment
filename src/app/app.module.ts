@@ -9,6 +9,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {NavBarComponent} from './components/nav-bar/nav-bar.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
+import {AnagramComponent} from './components/anagram/anagram.component';
 
 
 @NgModule({
@@ -18,10 +20,11 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FooterComponent,
     MainComponent,
     LandingPageComponent,
-    NavBarComponent
+    NavBarComponent,
+    AnagramComponent
   ],
   imports: [
-
+    CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserModule,

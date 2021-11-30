@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MuseumServive} from '../../service/museum-servive';
-import {isUndefined, omitBy} from 'lodash/';
 import {ActivatedRoute, Router} from "@angular/router";
+import {Observable} from "rxjs";
+import {isUndefined, omitBy} from "lodash";
 
 @Component({
   selector: 'app-main',
@@ -11,19 +12,26 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class MainComponent implements OnInit {
   search: string | undefined;
   name: string | undefined;
-  material: string | undefined;
-  technique: string | undefined;
   objectnumber: string | undefined;
 
   selectedObjectId: string = `-1`;
 
-  artObjects: any[] = [];
+  artObjects: Observable<Array<any>>;
 
   constructor(private service: MuseumServive, private activatedRoute: ActivatedRoute, private router: Router) {
+    const filters: {} = omitBy(
+      {
+        q: this.search,
+        involvedMaker: this.name,
+        objectnumber: this.objectnumber
+      },
+      isUndefined
+    );
+    this.artObjects = this.service.query(filters);
   }
 
   ngOnInit(): void {
-    this.artObjects = this.service.results;
+
   }
 
   onSelect(oId: string, obj: any) {
@@ -36,8 +44,17 @@ export class MainComponent implements OnInit {
     return this.selectedObjectId == null;
   }
 
-  async getObjects(){
-    await this.service.getFilterdObj(this.objectnumber, this.technique, this.name, this.search, this.material);
-    this.artObjects = this.service.results;
+  getFilterdObj() {
+    const filters: {} = omitBy(
+      {
+        q: this.search,
+        involvedMaker: this.name,
+
+        objectnumber: this.objectnumber
+      },
+      isUndefined
+    );
+    this.artObjects = this.service.query(filters);
   }
+
 }

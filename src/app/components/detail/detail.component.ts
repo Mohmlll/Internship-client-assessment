@@ -1,8 +1,7 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Params} from "@angular/router";
 import {Subscription} from "rxjs";
 import {MuseumServive} from "../../service/museum-servive";
-import {isUndefined, omitBy} from "lodash";
 
 @Component({
   selector: 'app-detail',
@@ -11,9 +10,8 @@ import {isUndefined, omitBy} from "lodash";
 })
 export class DetailComponent implements OnInit {
   objectNumber: string | undefined;
-  private childParamsSubscription: Subscription | undefined;
-
   artObject: any | undefined;
+  private childParamsSubscription: Subscription | undefined;
 
   constructor(protected activatedRoute: ActivatedRoute, private service: MuseumServive) {
 
@@ -30,7 +28,6 @@ export class DetailComponent implements OnInit {
       }
     );
   }
-
 
   ngOnDestroy() {
     this.childParamsSubscription &&
