@@ -1,7 +1,7 @@
 <div class="container-lg content">
 
   <div class="row">
-    <div class="block col-lg-10 m-auto row">
+    <div class="block col-lg-10  filter row">
       <form (submit)="getFilterdObj()">
         <div class="row p-3">
           <div class="col-lg-3">
@@ -25,18 +25,17 @@
     </div>
 
     <div class="block col-lg-10 m-auto row" style="overflow: auto">
-      <img src="assets/img/Rijks_museum_logo.png">
-      <br>
-      Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit.
-      Deleniti odit, suscipit. Accusamus alias et molestias nemo
-      quibusdam vero! Animi consectetur cumque dolore,
-      et facere in numquam officia porro ullam voluptas!
-
+      <div class="col-lg-10 header">
+        <img src="assets/img/Rijks_museum_logo.png">
+        <br>
+        Lorem ipsum dolor sit amet,
+        consectetur adipisicing elit.
+        Deleniti odit, suscipit. Accusamus alias et molestias nemo
+        quibusdam vero! Animi consectetur cumque dolore,
+        et facere in numquam officia porro ullam voluptas!
+      </div>
       <div class=" col-sm-3">
-        <div *ngFor="
-
-      let obj of artObjects | async" class="cards">
+        <div *ngFor="let obj of artObjects | async" class="cards">
           <div class="w-100 p-1">
             <div (click)="onSelect(obj.objectNumber, obj)" class="card item-card">
               <h6 class="card-title">{{obj.title}}</h6>

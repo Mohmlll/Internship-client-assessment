@@ -1,1 +1,24 @@
-<p>anagram works!</p>
+<div class="container-lg content ">
+  <div class="block col-lg-10 row m-auto">
+    <div class="intro col-lg-6 row">
+      <div class="col-lg-10">
+        <label for="input">Input (Split each word with a comma ","</label>
+        <input [(ngModel)]="input" class="form-control" id="input"
+               placeholder="split each word with a ,"
+               type="text"/>
+      </div>
+      <div class="col-lg-10">
+        Click to get output
+        <button (click)="log()" class="btn btn-primary">get Anagram</button>
+      </div>
+
+
+    </div>
+    <table class="col-lg-6">
+      <tr *ngFor="let key of output; let i = index">
+        <td>group: {{1 + i}}</td>
+        <td *ngFor="let word of key">{{word}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
