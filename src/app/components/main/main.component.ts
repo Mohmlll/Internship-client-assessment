@@ -10,15 +10,14 @@ import {isUndefined, omitBy} from "lodash";
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  search: string | undefined;
-  name: string | undefined;
-  objectnumber: string | undefined;
-
-  selectedObjectId: string = `-1`;
-
-  artObjects: Observable<Array<any>>;
+  public search: string | undefined;
+  public name: string | undefined;
+  public objectnumber: string | undefined;
+  public artObjects: Observable<Array<any>>;
 
   constructor(private service: MuseumServive, private activatedRoute: ActivatedRoute, private router: Router) {
+    //default collection load
+    //ombitBy checks if the variables are undefined or not, if they are not they are added to filters
     const filters: {} = omitBy(
       {
         q: this.search,
@@ -34,26 +33,22 @@ export class MainComponent implements OnInit {
 
   }
 
-  onSelect(oId: string, obj: any) {
-    this.selectedObjectId = oId;
+  onSelect(oId: string) {
     console.log(oId);
     this.router.navigate([oId], {relativeTo: this.activatedRoute});
   }
 
-  isNotNull(): boolean {
-    return this.selectedObjectId == null;
-  }
-
   getFilterdObj() {
+    //filters within collection
     const filters: {} = omitBy(
       {
         q: this.search,
         involvedMaker: this.name,
-
         objectnumber: this.objectnumber
       },
       isUndefined
     );
+    //sends queary with filter requirements if not undefined
     this.artObjects = this.service.query(filters);
   }
 

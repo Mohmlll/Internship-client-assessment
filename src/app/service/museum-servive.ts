@@ -7,7 +7,7 @@ import {assign} from "lodash";
   providedIn: 'root'
 })
 export class MuseumServive {
-  baseURL: string = environment.API_URL;
+  private baseURL: string = environment.API_URL;
   private key: string = environment.API_KEY
   private results: any[] = [];
 
@@ -16,7 +16,9 @@ export class MuseumServive {
   }
 
   query(filters: { [key: string]: string }): Observable<Array<any>> {
+    //assign combines the key and filters together in a 1 queary Obj
     const queryObj = assign({key: this.key}, filters);
+    //creates the url
     const fetchURl = this.baseURL + new URLSearchParams(queryObj);
     console.log(fetchURl);
     return from(
@@ -38,6 +40,7 @@ export class MuseumServive {
   }
 
   findById(id: string) {
+    //looking for a certain artobject within the results.
     for (let i = 0; i < this.results.length; i++) {
       if (this.results[i].objectNumber == id) {
         return this.results[i];

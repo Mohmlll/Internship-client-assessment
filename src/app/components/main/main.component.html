@@ -19,7 +19,7 @@
             <input [(ngModel)]="objectnumber" class="form-control" id="objectnumber" name="filter" type="text">
           </div>
         </div>
-        <button class="btn btn-primary" type="submit" value="Submit">Search</button>
+        <button class="btn btn-dark" type="submit" value="Submit">Search</button>
       </form>
 
     </div>
@@ -37,15 +37,15 @@
       <div class=" col-sm-3">
         <div *ngFor="let obj of artObjects | async" class="cards">
           <div class="w-100 p-1">
-            <div (click)="onSelect(obj.objectNumber, obj)" class="card item-card">
+            <div (click)="onSelect(obj.objectNumber)" class="card item-card">
               <h6 class="card-title">{{obj.title}}</h6>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="detail block col-sm-8">
-        <h4 *ngIf="isNotNull();
+      <div class="detail col-sm-8">
+        <h4 *ngIf="false;
           else app_detail"
             class="no-offer-details col-8">Select an art object on your left</h4>
         <ng-template #app_detail>

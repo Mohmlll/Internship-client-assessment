@@ -27,7 +27,8 @@ export class AnagramComponent implements OnInit {
     console.log(this.output);
   }
 
-  
+  //input is an array of strings
+  //output is an array with arrays of strings.
   private getAnagrams(input: string[]): Array<string[]> {
     const sorted: { [key: string]: string[] | undefined } = {};
     for (const word of input) {

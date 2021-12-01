@@ -1,21 +1,33 @@
-<table *ngIf="artObject !== null" class="container">
-  <tr>
-    <th colspan="2">Selected artObject details (Objectnumber: {{artObject.objectNumber}})</th>
-  </tr>
-  <tr>
-    <td>Image</td>
-    <td><img alt="img" src="{{artObject.webImage.url}}"></td>
-  </tr>
-  <tr>
-    <td>Title:</td>
-    <td><h5>{{artObject.title}}</h5></td>
-  </tr>
-  <tr>
-    <td>Artist:</td>
-    <td><h5>{{artObject.principalOrFirstMaker}}</h5></td>
-  </tr>
-  <tr>
-    <td>long title:</td>
-    <td><span>{{artObject.longTitle}}</span></td>
-  </tr>
-</table>
+<!--<div>-->
+<!--  <table *ngIf="artObject !== null">-->
+<!--    <tr>-->
+<!--      <th colspan="2">Selected artObject details (Objectnumber: {{artObject.objectNumber}})</th>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Image</td>-->
+<!--      <td><img alt="img" class="img-thumbnail" src="{{artObject.webImage.url}}"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Title:</td>-->
+<!--      <td><span>{{artObject.title}}</span></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>Artist:</td>-->
+<!--      <td><span>{{artObject.principalOrFirstMaker}}</span></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td>long title:</td>-->
+<!--      <td><span>{{artObject.longTitle}}</span></td>-->
+<!--    </tr>-->
+<!--  </table>-->
+
+<!--</div>-->
+<div *ngIf="artObject !== null" class="art-card block">
+  <img src="{{artObject.webImage.url}}" class="img-fluid" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{artObject.title}}</h5>
+    <p class="card-text">{{artObject.longTitle}}</p>
+    <p class="card-text"><b>Arthist:</b> {{artObject.principalOrFirstMaker}}</p>
+    <a href="{{artObject.links.web}}" class="btn btn dark">Link to website</a>
+  </div>
+</div>

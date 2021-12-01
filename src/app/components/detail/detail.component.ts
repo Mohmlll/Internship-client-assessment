@@ -9,8 +9,8 @@ import {MuseumServive} from "../../service/museum-servive";
   styleUrls: ['./detail.component.scss']
 })
 export class DetailComponent implements OnInit {
-  objectNumber: string | undefined;
-  artObject: any | undefined;
+  public objectNumber: string | undefined;
+  public artObject: any | undefined;
   private childParamsSubscription: Subscription | undefined;
 
   constructor(protected activatedRoute: ActivatedRoute, private service: MuseumServive) {
